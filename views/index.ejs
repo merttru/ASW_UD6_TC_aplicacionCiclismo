@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="ciclocrós, ciclocross, ciclistas, competiciones, UCI, deporte"
+    />
+    <meta
+      name="description"
+      content="Este sitio Web de la UCI se centra en la especialidad de ciclocrós. Muestra información de los ciclistas, su palmarés, las competiciones y sus resultados."
+    />
+    <meta name="author" content="Grupo2" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="styles/estilos.css" />
+    <title>Ciclocrós UCI Principal</title>
+  </head>
+
+  <body>
+    <header class="fixed-top"><%- include('navbar') %></header>
+
+    <div class="content" style="margin-top: 80px">
+      <div class="container">
+        <div
+          id="carruselciclistas"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                class="d-block w-100"
+                src="images/ciclocros1.jpg"
+                alt="ciclocros1"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/ciclocros2.jpg"
+                alt="ciclocros2"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/ciclocros3.jpg"
+                alt="ciclocros3"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/ciclocros4.jpg"
+                alt="ciclocros4"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/ciclocros5.jpg"
+                alt="ciclocros5"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/ciclocros6.jpg"
+                alt="ciclocros6"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="images/ciclocros7.jpg"
+                alt="ciclocros7"
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carruselciclistas"
+            data-bs-target="#carruselciclistas"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carruselciclistas"
+            data-bs-target="#carruselciclistas"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
+
+      <main>
+        <section class="noticias">
+          <div class="row">
+            <h2 class="noticias">Noticias de actualidad</h2>
+            <% noticias.forEach(noticia => { %>
+            <article class="col-lg-4 col-md-6 col-sm-12">
+              <p class="fecha">
+                <%= new Date(noticia.fecha).toLocaleDateString('es-ES') %>
+              </p>
+              <p class="titulo"><b><%= noticia.titulo %></b></p>
+              <p class="texto"><%= noticia.contenido %></p>
+              <!-- Ahora el enlace lleva a la URL guardada en el campo 'url' de la noticia -->
+              <p class="texto">
+                <a href="<%= noticia.noticiaWeb %>" target="_blank"
+                  >Leer más.</a
+                >
+              </p>
+              <div class="lineanegra"></div>
+            </article>
+            <% }) %>
+          </div>
+        </section>
+
+        <article class="justificado">
+          <div>
+            <p></p>
+            <div class="lineanegra"><p></p></div>
+            <p></p>
+            <p>
+              Explora el apasionante mundo del ciclocrós a través de nuestra
+              página dedicada. La Unión Ciclista Internacional te invita a
+              descubrir la emoción de este deporte, destacando tanto a hombres
+              como mujeres en la competición.
+            </p>
+            <p>
+              En esta segunda entrega, actualizamos la información sobre los
+              ciclistas destacados en la disciplina y las principales
+              competiciones del año 2024. Descubre sus historias, logros y sigue
+              de cerca las emocionantes competiciones que forman parte de esta
+              temporada.
+            </p>
+            <p>
+              Aunque la página en su estado actual puede carecer de algún
+              aspecto de diseño, nuestro enfoque inicial es brindarte una visión
+              clara y estructurada de la información. Pronto, esta plataforma se
+              expandirá para ofrecer una experiencia más interactiva y completa,
+              proporcionando datos actualizados y más características sobre el
+              mundo del ciclocrós.
+            </p>
+            <p>
+              ¡Disfruta de tu visita y mantente atento a las futuras
+              actualizaciones!
+            </p>
+          </div>
+        </article>
+
+        <section class="patrocinadores">
+          <H2>Patrocinadores</H2>
+
+          <table class="centrado">
+            <tr>
+              <td>
+                <img
+                  alt="Logo Shimano"
+                  src="images/logo_shimano.png"
+                  width="250"
+                />
+              </td>
+
+              <td>
+                <img
+                  alt="Logo Tissot"
+                  src="images/logo_tissot.png"
+                  width="250"
+                />
+              </td>
+
+              <td>
+                <img
+                  alt="Logo Santini"
+                  src="images/logo_santini.png"
+                  width="250"
+                />
+              </td>
+            </tr>
+          </table>
+        </section>
+      </main>
+    </div>
+    <footer> <%- include('footer') %> </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
